@@ -1,14 +1,19 @@
 <?php
-require_once __DIR__.'/vendor/autoload.php';
+require_once ('./vendor/autoload.php');
 
 use Symfony\Component\Yaml\Yaml;
 
+$value = Yaml::parseFile('./assets/yaml/demo.yml');
 
+// $loader =new \Twig\Loader\FilesystemLoader("/template");
 
-$value = Yaml::parseFile('./demo.yml');
+// $twig = new \Twig\Environment($loader);
 
-print_r($value['bill-to']['address']['lines']);
-echo '<br>';
-print_r($value['comments']);
+echo $value['welcome'];
+
+// echo $twig->render('index.html.twig', array(
+//   'msg' => $value['welcome'],
+// ));
+
 
 ?>
